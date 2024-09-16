@@ -1,0 +1,138 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20" Width="400">
+		<StackPanel Orientation="Vertical" Spacing="10">
+			<TextBox Watermark="Email"/>
+			<Button Classes="googleBtn" HorizontalAlignment="Stretch"/>
+			<Button Classes="submitBtn" Content="Login" HorizontalAlignment="Stretch"/>
+		</StackPanel>
+	</Border>
+  </Design.PreviewWith>
+
+	<Style Selector="TextBox">
+		<Setter Property="Background" Value="White"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Height" Value="50"/>
+		<Setter Property="BorderThickness" Value="2"/>
+		<Setter Property="BorderBrush" Value="rgba(0,0,0,0.3)"/>
+		<Setter Property="CornerRadius" Value="12"/>
+		<Setter Property="Foreground" Value="rgba(0,0,0,0.3)"/>
+		<Setter Property="FontWeight" Value="Medium"/>
+		<Setter Property="FontSize" Value="12"/>
+		<Setter Property="Transitions">
+			<Transitions>
+				<BrushTransition Property="Foreground" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+			</Transitions>
+		</Setter>
+		<Style Selector="^ /template/ TextBlock#PART_Watermark">
+			<Setter Property="FontSize" Value="12"/>
+			<Setter Property="Foreground" Value="rgba(0,0,0,0.3)"/>
+			<Setter Property="FontWeight" Value="Medium"/>
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="Foreground" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+				</Transitions>
+			</Setter>
+		</Style>
+		<Style Selector="^ /template/ Border#PART_BorderElement">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="BorderBrush" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+				</Transitions>
+			</Setter>
+		</Style>
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="Background" Value="Transparent"/>
+				<Setter Property="BorderBrush" Value="{DynamicResource prColor}"/>
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_Watermark">
+				<Setter Property="Foreground" Value="rgba(0,0,0,0.6)"/>
+			</Style>
+		</Style>
+		<Style Selector="^:focus">
+			<Setter Property="Foreground" Value="{DynamicResource prColor}"/>
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="Background" Value="Transparent"/>
+				<Setter Property="BorderBrush" Value="{DynamicResource prColor}"/>
+			</Style>
+		</Style>
+	</Style>
+
+	<Style Selector="Button.googleBtn">
+		<Setter Property="Height" Value="50"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Border Classes="base" Background="White" CornerRadius="12" ClipToBounds="True" BorderThickness="2">
+						<Border.Styles>
+							<Style Selector="Border.base">
+								<Setter Property="BorderBrush" Value="rgba(0,0,0,0.3)"/>
+								<Setter Property="Transitions">
+									<Transitions>
+										<BrushTransition Property="BorderBrush" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+									</Transitions>
+								</Setter>
+								<Style Selector="^ Grid.logo">
+									<Setter Property="Margin" Value="10 0 0 0"/>
+									<Setter Property="Background" Value="White"/>
+									<Setter Property="Transitions">
+										<Transitions>
+											<ThicknessTransition Property="Margin" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+										</Transitions>
+									</Setter>
+								</Style>
+								<Style Selector="^ TextBlock.text">
+									<Setter Property="Width" Value="0"/>
+									<Setter Property="Transitions">
+										<Transitions>
+											<DoubleTransition Property="Width" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+										</Transitions>
+									</Setter>
+								</Style>
+								<Style Selector="^:pointerover">
+									<Setter Property="BorderBrush" Value="{DynamicResource prColor}"/>
+									<Style Selector="^ Grid.logo">
+										<Setter Property="Margin" Value="0 0 0 0"/>
+									</Style>
+									<Style Selector="^ TextBlock.text">
+										<Setter Property="Width" Value="104"/>
+									</Style>
+								</Style>
+							</Style>
+						</Border.Styles>
+						<StackPanel Spacing="10" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<Grid Classes="logo" Background="Transparent" Width="22" Height="22">
+								<Path Data="M5.01822 11C5.01822 10.3331 5.12898 9.69378 5.32666 9.09411L1.86655 6.45184C1.19219 7.82104 0.812256 9.36384 0.812256 11C0.812256 12.6347 1.19173 14.1766 1.86515 15.5448L5.32339 12.8974C5.12758 12.3006 5.01822 11.6636 5.01822 11Z" Fill="#FBBC05"/>
+								<Path Data="M11.0935 4.93331C12.5423 4.93331 13.8508 5.44664 14.8789 6.28664L17.8698 3.29997C16.0472 1.71331 13.7106 0.733307 11.0935 0.733307C7.03057 0.733307 3.53868 3.05684 1.86658 6.45184L5.32668 9.09411C6.12395 6.67397 8.39657 4.93331 11.0935 4.93331Z" Fill="#EB4335"/>
+								<Path Data="M11.0935 17.0667C8.39657 17.0667 6.12395 15.326 5.32668 12.9059L1.86658 15.5477C3.53868 18.9431 7.03057 21.2667 11.0935 21.2667C13.6012 21.2667 15.9954 20.3763 17.7922 18.7079L14.5078 16.1688C13.5811 16.7526 12.4142 17.0667 11.0935 17.0667Z" Fill="#34A853"/>
+								<Path Data="M20.9074 11C20.9074 10.3933 20.814 9.73997 20.6738 9.1333H11.0935V13.1H16.608C16.3323 14.4524 15.5817 15.4921 14.5078 16.1688L17.7922 18.7079C19.6798 16.956 20.9074 14.3464 20.9074 11Z" Fill="#4285F4"/>							
+							</Grid>
+							<TextBlock Classes="text" Text="Login with Google" VerticalAlignment="Center" HorizontalAlignment="Center"
+									   Foreground="{DynamicResource prColor}" FontSize="12" FontWeight="SemiBold"/>
+						</StackPanel>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style Selector="Button.submitBtn">
+		<Setter Property="Height" Value="50"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="CornerRadius" Value="25"/>
+		<Setter Property="Background" Value="{DynamicResource prColor}"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="FontSize" Value="14"/>
+		<Setter Property="FontWeight" Value="Medium"/>
+		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="{DynamicResource prColor}"/>
+			<Setter Property="Foreground" Value="White"/>
+		</Style>
+
+	</Style>
+	
+</Styles>

@@ -1,0 +1,76 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        x:Class="LoginUI.MainWindow"
+        Title="LoginUI"
+		Width="1140" Height="720"
+		ExtendClientAreaChromeHints="NoChrome"
+		ExtendClientAreaTitleBarHeightHint="-1"
+		ExtendClientAreaToDecorationsHint="False"
+		SystemDecorations="None"
+		Background="Transparent"
+		WindowStartupLocation="CenterScreen"
+		CanResize="False">
+	
+	<Border CornerRadius="50" Background="White">
+		<Grid ColumnDefinitions="Auto,*" Margin="20">
+			<Grid Grid.Column="0" Width="600">
+				<Border>
+					<Border.Clip>
+						<PathGeometry>
+							M0 25C0 11.1929 11.1929 0 25 0H570.822C586.157 0 597.878 13.6792 595.527 28.8328L497.784 658.833C495.894 671.014 485.407 680 473.08 680H25C11.1929 680 0 668.807 0 655V25Z
+						</PathGeometry>
+					</Border.Clip>
+					<Image Source="/Assets/bg.jpg" Stretch="UniformToFill" Margin="0 0 -500 0"/>
+				</Border>
+				<Grid RowDefinitions="Auto,*,Auto">
+					<Grid Grid.Row="0" ColumnDefinitions="*,*" Margin="35">
+						<TextBlock Grid.Column="0" Text="Aiox Development"
+								   FontSize="16" FontWeight="Bold" Foreground="rgba(255,255,255,0.9)"
+								   VerticalAlignment="Center"/>
+						<StackPanel Grid.Column="1" Spacing="15" HorizontalAlignment="Right" Orientation="Horizontal">
+							<Button Content="Sign Up" Foreground="White" FontSize="12"
+									Width="80" Height="40" HorizontalContentAlignment="Center"
+									VerticalContentAlignment="Center" CornerRadius="20" Background="Transparent"/>
+							<Button Content="Join Us" Foreground="White" FontSize="12"
+								Width="80" Height="40" HorizontalContentAlignment="Center"
+								VerticalContentAlignment="Center" CornerRadius="20" Background="Transparent"
+									BorderBrush="White"/>	
+						</StackPanel>
+					</Grid>
+				</Grid>
+			</Grid>
+			<Grid Grid.Column="1" Margin="100 0 100 0">
+				<StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Orientation="Vertical"
+							Spacing="20">
+					<TextBlock Text="Login" HorizontalAlignment="Center" FontSize="36" FontWeight="ExtraBold"
+							   Foreground="rgba(0,0,0,0.9)"/>
+					<TextBlock Text="Welcome to Aiox Development" HorizontalAlignment="Center"
+							   FontSize="14" FontWeight="SemiBold" Foreground="rgba(0,0,0,0.8)"/>
+					<StackPanel Orientation="Vertical" Spacing="10">
+						<TextBox Watermark="Email"/>
+						<TextBox Watermark="Password" PasswordChar="*"/>
+					</StackPanel>
+					<TextBlock Text="Forgot password?"
+							   HorizontalAlignment="Right"
+							   Foreground="{StaticResource prColor}"
+							   FontSize="12" FontWeight="Medium"/>
+					<StackPanel Orientation="Horizontal" Spacing="15" HorizontalAlignment="Center">
+						<Rectangle Width="50" Height="2" Fill="rgba(0,0,0,0.3)"/>
+						<TextBlock Text="or" FontWeight="SemiBold" FontSize="14" Foreground="rgba(0,0,0,0.8)"/>
+						<Rectangle Width="50" Height="2" Fill="rgba(0,0,0,0.3)"/>
+					</StackPanel>
+					<Button Classes="googleBtn" HorizontalAlignment="Stretch"/>
+					<Button Classes="submitBtn" Content="Login" HorizontalAlignment="Stretch"/>
+					<TextBlock HorizontalAlignment="Center" FontWeight="Medium">
+						<Run Text="Don't have an account?" Foreground="rgba(0,0,0,0.8)"/>
+						<Run Text="Sign up" Foreground="{StaticResource prColor}"/>
+					</TextBlock>
+				</StackPanel>
+			</Grid>
+		</Grid>
+	</Border>
+	
+</Window>
